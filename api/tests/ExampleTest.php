@@ -1,8 +1,6 @@
 <?php
 
-use Illuminate\Foundation\Testing\WithoutMiddleware;
-use Illuminate\Foundation\Testing\DatabaseMigrations;
-use Illuminate\Foundation\Testing\DatabaseTransactions;
+use \Illuminate\Support\Facades\DB;
 
 class ExampleTest extends TestCase
 {
@@ -16,4 +14,17 @@ class ExampleTest extends TestCase
         $this->visit('/')
              ->see('Laravel');
     }
+
+    public function testDB()
+    {
+        $db = DB::connection()->getDatabaseName();
+        $this->assertEquals('watergo', $db);
+    }
+
+    public function testRedis()
+    {
+        $redis = Redis::connection();
+        var_dump($redis);
+    }
+
 }
