@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Providers;
+namespace Watergo\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
