@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Providers;
+namespace Watergo\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -23,7 +23,7 @@ class RepositoryServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->bind(\App\Repositories\LocationRepository::class, \App\Repositories\LocationRepositoryEloquent::class);
+        $this->app->bind(\Watergo\Repositories\LocationRepository::class, \Watergo\Repositories\LocationRepositoryEloquent::class);
         //:end-bindings:
     }
 }

@@ -1,16 +1,16 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace Watergo\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Http\Requests;
+use Watergo\Http\Requests;
 use Prettus\Validator\Contracts\ValidatorInterface;
 use Prettus\Validator\Exceptions\ValidatorException;
-use App\Http\Requests\LocationCreateRequest;
-use App\Http\Requests\LocationUpdateRequest;
-use App\Repositories\LocationRepository;
-use App\Validators\LocationValidator;
+use Watergo\Http\Requests\LocationCreateRequest;
+use Watergo\Http\Requests\LocationUpdateRequest;
+use Watergo\Repositories\LocationRepository;
+use Watergo\Validators\LocationValidator;
 
 
 class LocationsController extends Controller

@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Transformers;
+namespace Watergo\Transformers;
 
 use League\Fractal\TransformerAbstract;
-use App\Entities\Location;
+use Watergo\Entities\Location;
 
 /**
  * Class LocationTransformer
- * @package namespace App\Transformers;
+ * @package namespace Watergo\Transformers;
  */
 class LocationTransformer extends TransformerAbstract
 {

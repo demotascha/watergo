@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Validators;
+namespace Watergo\Validators;
 
 use \Prettus\Validator\Contracts\ValidatorInterface;
 use \Prettus\Validator\LaravelValidator;

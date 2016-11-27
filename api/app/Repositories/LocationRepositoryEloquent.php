@@ -1,16 +1,16 @@
 <?php
 
-namespace App\Repositories;
+namespace Watergo\Repositories;
 
 use Prettus\Repository\Eloquent\BaseRepository;
 use Prettus\Repository\Criteria\RequestCriteria;
-use App\Repositories\LocationRepository;
-use App\Entities\Location;
-use App\Validators\LocationValidator;
+use Watergo\Repositories\LocationRepository;
+use Watergo\Entities\Location;
+use Watergo\Validators\LocationValidator;
 
 /**
  * Class LocationRepositoryEloquent
- * @package namespace App\Repositories;
+ * @package namespace Watergo\Repositories;
  */
 class LocationRepositoryEloquent extends BaseRepository implements LocationRepository
 {

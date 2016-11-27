@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Presenters;
+namespace Watergo\Presenters;
 
-use App\Transformers\LocationTransformer;
+use Watergo\Transformers\LocationTransformer;
 use Prettus\Repository\Presenter\FractalPresenter;
 
 /**
  * Class LocationPresenter
  *
- * @package namespace App\Presenters;
+ * @package namespace Watergo\Presenters;
  */
 class LocationPresenter extends FractalPresenter
 {
