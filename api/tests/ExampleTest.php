@@ -24,7 +24,9 @@ class ExampleTest extends TestCase
     public function testRedis()
     {
         $redis = Redis::connection();
-        var_dump($redis);
+        $redis->set('name', 'Taylor');
+        $values = $redis->get('name');
+        $this->assertEquals('Taylor', $values);
     }
 
 }
