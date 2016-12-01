@@ -5,6 +5,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="http://maps.google.com/maps/api/js?sensor=true&.js&key=AIzaSyBFl89Khv5djG8jK2gAjkcMoBIkkpY8cT8"></script>
     <script src="https://rawgit.com/HPNeo/gmaps/master/gmaps.js"></script>
+    <script src="https://rawgit.com/googlemaps/js-marker-clusterer/gh-pages/src/markerclusterer.js"></script>
 
     <style type="text/css">
         #mymap {
@@ -29,7 +30,10 @@
         el: '#mymap',
         lat: 25.025543,
         lng: 121.463530,
-        zoom: 14
+        zoom: 14,
+        markerClusterer: function(mymap) {
+            return new MarkerClusterer(mymap);
+        }
     });
 
     $.each( locations, function( index, value ) {
