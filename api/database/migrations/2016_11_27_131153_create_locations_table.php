@@ -19,6 +19,8 @@ class CreateLocationsTable extends Migration
 			$table->string('city');
 			$table->double('lat');
 			$table->double('lag');
+			$table->text('description');
+			$table->string('opening_hours');
 			$table->timestamps();
 			$table->softDeletes();
 		});
