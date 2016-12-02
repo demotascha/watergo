@@ -26,25 +26,27 @@
 
     var locations = <?php print_r(json_encode($locations)) ?>;
 
-    var mymap = new GMaps({
-        el: '#mymap',
-        lat: 25.025543,
-        lng: 121.463530,
+    var center = new google.maps.LatLng(25.025543, 121.463530);
+    var map = new google.maps.Map(document.getElementById('mymap'), {
         zoom: 14,
-        markerClusterer: function(mymap) {
-            return new MarkerClusterer(mymap);
-        }
+        center: center,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
     });
 
+
+    var markers = [];
     $.each( locations, function( index, value ) {
-        mymap.addMarker({
-            lat: value.lat,
-            lng: value.lng,
+        var latLng = new google.maps.LatLng(value.lat,
+                value.lng);
+        var marker = new google.maps.Marker({
+            position: latLng,
             infoWindow: {
                 content: '<p>'+ value.name +'</p>'
             }
         });
+        markers.push(marker);
     });
+    var markerCluster = new MarkerClusterer(map, markers, {imagePath: '../images/m'});
 
 </script>
 
