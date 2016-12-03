@@ -23,31 +23,44 @@
 <div id="mymap"></div>
 
 <script type="text/javascript">
+    function initialize() {
+        var locations = <?php print_r(json_encode($locations)) ?>;
 
-    var locations = <?php print_r(json_encode($locations)) ?>;
+        var center = new google.maps.LatLng(25.025543, 121.463530);
+        var map = new google.maps.Map(document.getElementById('mymap'), {
+            zoom: 14,
+            center: center,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        });
 
-    var center = new google.maps.LatLng(25.025543, 121.463530);
-    var map = new google.maps.Map(document.getElementById('mymap'), {
-        zoom: 14,
-        center: center,
-        mapTypeId: google.maps.MapTypeId.ROADMAP
-    });
-
-
-    var markers = [];
-    $.each( locations, function( index, value ) {
-        var latLng = new google.maps.LatLng(value.lat,
-                value.lng);
-        var marker = new google.maps.Marker({
-            position: latLng,
-            infoWindow: {
-                content: '<p>'+ value.name +'</p>'
+        var markers = [];
+        $.each( locations, function( index, value ) {
+            var latLng = new google.maps.LatLng(value.lat,
+                    value.lng);
+            var marker = new google.maps.Marker({
+                position: latLng,
+                infoWindow: {
+                    content: '<p>'+ value.name +'</p>'
+                }
+            });
+            markers.push(marker);
+        });
+        // This event listener calls addMarker() when the map is clicked.
+        google.maps.event.addListener(map, 'click', function(event) {
+            var marker = new google.maps.Marker({
+                position: event.latLng,
+                infoWindow: {
+                    content: '<p>'+ 'jskfld' +'</p>'
+                }
+            });
+            //markers.push(marker);
+            if (markerCluster) {
+                markerCluster.addMarker(marker, true);
             }
         });
-        markers.push(marker);
-    });
-    var markerCluster = new MarkerClusterer(map, markers, {imagePath: '../images/m'});
-
+        var markerCluster = new MarkerClusterer(map, markers, {imagePath: '../images/m'});
+    }
+    google.maps.event.addDomListener(window, 'load', initialize);
 </script>
 
 </body>
