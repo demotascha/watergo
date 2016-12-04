@@ -38,15 +38,13 @@
             var latLng = new google.maps.LatLng(value.lat,
                     value.lng);
             var marker = new google.maps.Marker({
-                position: latLng,
-                infoWindow: {
-                    content: '<p>'+ value.name +'</p>'
-                }
+                position: latLng
             });
+            attachSecretMessage(marker, '<p>'+ value.name +'</p>');
             markers.push(marker);
         });
         // This event listener calls addMarker() when the map is clicked.
-        google.maps.event.addListener(map, 'click', function(event) {
+        google.maps.event.addListener(map, 'rightclick', function(event) {
             var marker = new google.maps.Marker({
                 position: event.latLng,
                 infoWindow: {
@@ -61,6 +59,20 @@
         var markerCluster = new MarkerClusterer(map, markers, {imagePath: '../images/m'});
     }
     google.maps.event.addDomListener(window, 'load', initialize);
+
+    // Attaches an info window to a marker with the provided message. When the
+    // marker is clicked, the info window will open with the secret message.
+    function attachSecretMessage(marker, secretMessage) {
+        var infowindow = new google.maps.InfoWindow({
+            content: secretMessage
+        });
+        marker.addListener('mouseover', function() {
+            infowindow.open(marker.get('map'), marker);
+        });
+        marker.addListener('mouseout', function() {
+            infowindow.close();;
+        });
+    }
 </script>
 
 </body>
