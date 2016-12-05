@@ -4,7 +4,6 @@ namespace Watergo\Repositories;
 
 use Prettus\Repository\Eloquent\BaseRepository;
 use Prettus\Repository\Criteria\RequestCriteria;
-use Watergo\Repositories\LocationRepository;
 use Watergo\Entities\Location;
 use Watergo\Validators\LocationValidator;
 
