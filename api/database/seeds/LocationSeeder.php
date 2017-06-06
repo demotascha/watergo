@@ -17,15 +17,21 @@ class LocationSeeder extends Seeder
 
         foreach ($geographies['features'] as $geography) {
             $name = '飲水機';
+            $opening_hours = '';
             if (isset($geography['properties']['name'])) {
                 $name = $geography['properties']['name'];
             } elseif (!isset($geography['properties']['name']) && isset($geography['properties']['description'])) {
                 $name = $geography['properties']['description'];
             }
+            if (isset($geography['properties']['opening_hours'])) {
+                $opening_hours = $geography['properties']['opening_hours'];
+            }
+
             Location::create([
                 'name'  => $name,
                 'lat'   => $geography['geometry']['coordinates'][1],
                 'lng'   => $geography['geometry']['coordinates'][0],
+                'opening_hours' => $opening_hours,
             ]);
         }
     }

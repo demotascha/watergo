@@ -3,7 +3,7 @@
 <head>
     <title>Laravel 5 - Multiple markers in google map using gmaps.js</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="http://maps.google.com/maps/api/js?sensor=true&.js&key=AIzaSyBFl89Khv5djG8jK2gAjkcMoBIkkpY8cT8"></script>
+    <script src="http://maps.google.com/maps/api/js?sensor=true&.js&key=AIzaSyAzCmJkr6xIAA36jjN46kguaAWykHov0gE"></script>
     <script src="https://rawgit.com/HPNeo/gmaps/master/gmaps.js"></script>
     <script src="https://rawgit.com/googlemaps/js-marker-clusterer/gh-pages/src/markerclusterer.js"></script>
 
